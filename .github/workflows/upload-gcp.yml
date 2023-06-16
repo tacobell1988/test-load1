@@ -15,8 +15,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  job_id:
-    #runs-on: 'ubuntu-latest'
+ upload-to-gcp:
+    runs-on: 'ubuntu-latest'
     permissions:
       contents: 'read'
       id-token: 'write'
