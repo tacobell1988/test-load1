@@ -6,10 +6,10 @@ regex=""
 while IFS= read -r line; do
   # Ignore comments and empty lines
   if [[ "$line" =~ ^[^#]*[^[:space:]]$ ]]; then
-    # Add a . before *
-    line=${line//\*/\.\\*}
     # Escape the dot character
     line=${line//./\\.}
+    # Add a . before *
+    line=${line//\*/\.\\*}
     regex+="|$line"
   fi
 done < "$gcloudignore"
