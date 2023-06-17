@@ -28,6 +28,7 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
+        token_format: 'access_token'
         workload_identity_provider: 'projects/356953323642/locations/global/workloadIdentityPools/ana-baranjin-com-github/providers/github'
         service_account: 'anabaranjincomgithubupload@vaulted-art-178200.iam.gserviceaccount.com'
 
