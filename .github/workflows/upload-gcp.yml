@@ -50,7 +50,8 @@ jobs:
       run: |
         chmod +x ./gcloudignore.sh
         ./gcloudignore.sh
-        gsutil -m rsync -x $($GSUTIL_IGNORE) -R -d -c ./ gs://test-github-upload/
+        gsutil -m rsync -x gha-creds.* -R -d -c ./ gs://test-github-upload/
+#        gsutil -m rsync -x $($GSUTIL_IGNORE) -R -d -c ./ gs://test-github-upload/
 
     - name: 'Show File Details'
       run: 'ls -l ./'
