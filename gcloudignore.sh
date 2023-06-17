@@ -7,7 +7,7 @@ while IFS= read -r line; do
   # Ignore comments and empty lines
   if [[ "$line" =~ ^[^#]*[^[:space:]]$ ]]; then
     # Escape the dot character and add ^ and $
-    line="^${line//\*/\\*}$"
+    line="^${line//\*/\\*}"
     line=${line//./\\.}
     regex+="|$line"
   fi
