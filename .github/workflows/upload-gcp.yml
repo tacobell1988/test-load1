@@ -32,8 +32,12 @@ jobs:
         workload_identity_provider: 'projects/356953323642/locations/global/workloadIdentityPools/ana-baranjin-com-github/providers/github'
         service_account: 'anabaranjincomgithubupload@vaulted-art-178200.iam.gserviceaccount.com'
 
-    - id: 'upload-folder'
-      uses: 'google-github-actions/upload-cloud-storage@v1'
-      with:
-        path: './'
-        destination: 'test-github-upload'
+#    - id: 'upload-folder'
+#      uses: 'google-github-actions/upload-cloud-storage@v1'
+#      with:
+#        path: './'
+#        destination: 'test-github-upload'
+    
+    - id: 'sync-folder'
+      name: 'Sync Github content to Google Bucket'
+      run: 'gsutil -m rsync -R -d ./ gs://test-github-upload/'
