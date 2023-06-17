@@ -25,7 +25,7 @@ jobs:
     - id: 'checkout'
       uses: 'actions/checkout@v3'
       with:
-        fetch-depth: 0
+        fetch-depth: 1
 
     - id: 'auth'
       name: 'Authenticate to Google Cloud'
