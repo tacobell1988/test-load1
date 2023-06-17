@@ -34,23 +34,24 @@ jobs:
         workload_identity_provider: 'projects/356953323642/locations/global/workloadIdentityPools/ana-baranjin-com-github/providers/github'
         service_account: 'anabaranjincomgithubupload@vaulted-art-178200.iam.gserviceaccount.com'
 
-#    - id: 'upload-folder'
-#      uses: 'google-github-actions/upload-cloud-storage@v1'
-#      with:
-#        path: './'
-#        destination: 'test-github-upload'
+    - id: 'upload-folder'
+      uses: 'google-github-actions/upload-cloud-storage@v1'
+      with:
+        path: './'
+        destination: 'test-github-upload'
+        predefinedAcl: 'publicRead'
 
 #    - name: 'Turn .gcloudignore into Regex for exclusion'
 #      run: 'bash ./gcloudignore.sh'
 
-    - name: 'Set up Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v1'
+#    - name: 'Set up Cloud SDK'
+#      uses: 'google-github-actions/setup-gcloud@v1'
     
-    - name: 'Sync Github content to Google Bucket'
-      run: |
-        chmod +x ./gcloudignore.sh
-        ./gcloudignore.sh
-        gsutil -m rsync -x gha-creds.* -R -d -c ./ gs://test-github-upload/
+#    - name: 'Sync Github content to Google Bucket'
+#      run: |
+#        chmod +x ./gcloudignore.sh
+#        ./gcloudignore.sh
+#        gsutil -m rsync -x gha-creds.* -R -d -c ./ gs://test-github-upload/
 #        gsutil -m rsync -x $($GSUTIL_IGNORE) -R -d -c ./ gs://test-github-upload/
 
     - name: 'Show File Details'
