@@ -18,4 +18,4 @@ regex=${regex#|}
 # Export the generated regular expression as an environment variable
 export GSUTIL_IGNORE="\"$regex\""
 
-echo "$regex"
+echo $GSUTIL_IGNORE
