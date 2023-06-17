@@ -48,7 +48,7 @@ jobs:
     
     - name: 'Sync Github content to Google Bucket'
       run: |
-        bash ./gcloudignore.sh
+        ./gcloudignore.sh
         gsutil -m rsync -x $GSUTIL_IGNORE -R -d -c ./ gs://test-github-upload/
 
     - name: 'Show File Details'
