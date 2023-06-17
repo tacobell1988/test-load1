@@ -48,8 +48,8 @@ jobs:
     
     - name: 'Sync Github content to Google Bucket'
       run: |
-        'bash ./gcloudignore.sh'
-        'gsutil -m rsync -x $GSUTIL_IGNORE -R -d -c ./ gs://test-github-upload/'
+        bash ./gcloudignore.sh
+        gsutil -m rsync -x $GSUTIL_IGNORE -R -d -c ./ gs://test-github-upload/
 
     - name: 'Show File Details'
       run: 'ls -l ./'
