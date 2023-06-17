@@ -16,6 +16,6 @@ done < "$gcloudignore"
 regex=${regex#|}
 
 # Export the generated regular expression as an environment variable
-export GSUTIL_IGNORE="\"$regex\""
+export GSUTIL_IGNORE="$regex"
 
 echo $GSUTIL_IGNORE
