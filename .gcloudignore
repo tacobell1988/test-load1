@@ -1,4 +1,5 @@
 .gcloudignore
+gcloudignore.sh
 .git
 .github
 .gitignore
