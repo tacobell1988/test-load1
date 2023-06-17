@@ -39,7 +39,10 @@ jobs:
 #      with:
 #        path: './'
 #        destination: 'test-github-upload'
-    
+
+    - name: 'Turn .gcloudignore into Regex for exclusion'
+      run: 'bash ./gcloudignore.sh'
+
     - name: 'Set up Cloud SDK'
       uses: 'google-github-actions/setup-gcloud@v1'
     
