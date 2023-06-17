@@ -47,7 +47,7 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
     
     - name: 'Sync Github content to Google Bucket'
-      run: 'gsutil -m rsync -R -d -c -x $GSUTIL_IGNORE ./ gs://test-github-upload/'
+      run: 'gsutil -m rsync -R -d -c -x "$GSUTIL_IGNORE" ./ gs://test-github-upload/'
 
     - name: 'Show File Details'
       run: 'ls -l ./'
