@@ -9,7 +9,7 @@ while IFS= read -r line; do
     # Escape the dot character
     line=${line//./\\.}
     # Add a . before *
-    line=${line//\*/\.\\*}
+    line=${line//\*/.*}
     regex+="|$line"
   fi
 done < "$gcloudignore"
