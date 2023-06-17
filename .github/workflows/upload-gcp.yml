@@ -42,4 +42,4 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
     
     - name: 'Sync Github content to Google Bucket'
-      run: 'gsutil -m rsync -R -d ./ gs://test-github-upload/'
+      run: 'gsutil -m rsync -R --diff -d ./ gs://test-github-upload/'
