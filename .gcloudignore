@@ -4,3 +4,4 @@ gcloudignore.sh
 .github
 .gitignore
 gha-creds*
+.htaccess
